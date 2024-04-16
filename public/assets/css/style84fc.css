@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap');
+
+.font-bold {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin: auto;
+    width: 96%;
+}
+
+.active-nav {
+    color: #B11515 !important;
+    position: relative;
+}
+
+.active-nav::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 60%;
+    border-radius: 12px;
+    background-color: #B11515;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.svg-parent:hover .svg-child {
+    stroke: #fff;
+}
+
+.shadow-cstm-1 {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #B11515 !important;
+}
+
+.tab_p>li>button[aria-selected=true] {
+    color: #B11515 !important;
+    border-color: #B11515 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #B11515;
+    height:10px;
+    width:10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+
+body{
+    padding:0 !important;
+}
+
+/* html,body{
+    overflow-x: hidden;
+} */
+
+@media screen and (max-width:540px) {
+    :root{
+        font-size:12px;
+    }
+}
+
+.services_card{
+    position:relative;
+    height:16rem;
+}
+.services_card::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2;
+    background-color:#fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.services_card.img1::after{
+    background-image:url('../images/Make%20a%20Donation.jpg');
+}
+
+.services_card.img2::after{
+    background-image:url('../images/Free%20dialysis%20services.jpg');
+}
+
+.services_card.img3::after{
+    background-image:url('../images/State%20of%20the%20Art%20Operation%20Theater.jpg');
+}
+
+.translate-y-\[-10px\].relative.z-\[2\].p-4.flex.flex-col.gap-3.bg-white.rounded-xl{
+    display:none;
+}
+
+img.h-\[14rem\].relative.z-\[1\].w-full.object-cover.rounded-md{
+    object-fit:contain !important;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
+img.object-cover.object-center.absolute.z-\[-1\].inset-0.w-full.h-full{
+    object-fit:contain !important;
+}
+
+ul{
+    padding:20px 0 !important;
+    list-style: decimal !important;
+    list-style-position: inside !important;
+}
+
+.swiper.people {
+    height:fit-content !important;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+    display:none;
+}
+
+#navbar-dropdown li {
+    list-style: none;
+}
+
+.swiper-slide.w-fit,.swiper.partners{
+    width:fit-content !important;
+        height: fit-content !important;
+}
