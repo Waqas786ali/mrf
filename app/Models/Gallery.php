@@ -5,15 +5,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Gallery extends Model
 {
 
     protected $fillable=[
         'name',
-        'content',
-        'slug',
         'image',
         'status',
     ];
 
+    public function galleryitem()
+    {
+        return $this->hasMany(GalleryItem::class);
+    }
 }

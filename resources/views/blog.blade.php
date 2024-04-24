@@ -2,207 +2,136 @@
 
 @section('content')
 
-    <section class="pt-8">
-        <div class="text-center flex flex-col gap-4 py-8">
-            <h1 class="font-bold text-[#031D26] text-[2rem]">Our Clinical <span class="text-[#B11515]">Services</span></h1>
 
-        </div>
-        <div class="swiper people w-[85%] my-[3rem] container bg-[rgba(177,21,21,0.1)] shadow-[0px_4px_8px_8px_rgba(99,99,99,0.1)] py-12 rounded-md">
-            <div class="swiper-wrapper w-full">
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img1.png')}}" class="object-cover w-full" /></div>
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>24x7 <span class="text-xs">OPD/Emergency Services</span></p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img2.png')}}" class="object-cover w-full" /></div>
 
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Obstetrics And Gynecology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img3.png')}}" class="object-cover w-full" /></div>
+    <style>
+        .pagination{
+            text-align: center;
+        }
+        .pagination .page-item {
+            display: inline-block;
+            margin-right: 5px;
+        }
 
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Surgeries</p>
+        .pagination .page-link {
+            color: #3366CC;
+            border: 1px solid #3366CC;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
 
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img4.png')}}" class="object-cover w-full" /></div>
+        .pagination .page-link:hover {
+            background-color: #3366CC;
+            color: #fff;
+        }
 
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Diabetes</p>
-                </div>
+        .pagination .page-item.active .page-link {
+            background-color: #3366CC;
+            color: #fff;
+            border-color: #3366CC;
+        }
 
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img5.png')}}" class="object-cover w-full" /></div>
+    </style>
 
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Hemodialysis</p>
-                </div>
 
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img6.png')}}" class="object-cover w-full" /></div>
+    <!-- Section -->
+    <section>
+        <div class="bg-[#fff] py-[5rem]">
+            <div class="container xl:w-[75%] md:w-[80%] mx-auto px-[2rem]">
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-center gap-3 justify-between">
+                        <div class="flex items-center gap-3 text-sm">
 
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Medicine</p>
-                </div>
-
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img7.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Nephrology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img8.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Urology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img9.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Cardiology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img10.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Orthopedicy</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img11.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Physiotherapy</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img12.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Dermatology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img13.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Peads</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img14.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Gastroenterology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img15.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Neurology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img16.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>E.N.T</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img17.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Dentistry</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img18.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Radiology</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img19.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Diagnostic Laboratory</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img20.png')}}" class="object-cover w-full" /></div>
-
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>ECG</p>
-                </div>
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img21.png')}}" class="object-cover w-full" /></div>
-                    <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Echocardiography</p>
-                </div>
-            </div>
-            <div class="swiper-button-next after:content-none">
-                <div class="rounded-full bg-white border-2 border-[#B11515] hover:bg-[#B11515] svg-parent transition-all">
-                    <div class="h-[2.5rem] !w-[2.5rem] flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#B11515" stroke-width="2"
-                             fill="none" stroke-linecap="round" stroke-linejoin="round" class="svg-child">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 border rounded-full px-4 py-2 text-sm w-fit">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10.2698" cy="9.7659" r="8.98856" stroke="#A9B3C5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16.5234 16.4844L20.0475 19.9992" stroke="#A9B3C5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <form action="{{ route('blogs') }}" method="GET" class="flex gap-2">
+                                    <input type="text" placeholder="Search Blog" name="search" class="outline-none border-none w-full text-sm" value="{{ $searchTerm }}" onkeydown="if(event.keyCode === 13) this.form.submit()">
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="swiper-button-prev after:content-none">
-                <div class="rounded-full bg-white border-2 border-[#B11515] hover:bg-[#B11515] svg-parent transition-all">
-                    <div class="h-[2.5rem] !w-[2.5rem] flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="#B11515" stroke-width="2"
-                             fill="none" stroke-linecap="round" stroke-linejoin="round" class="svg-child">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
+                    <div class="mt-[2rem]">
+                        <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-6">
+                            @if ($blogs->isEmpty())
+                                <h1 class="font-bold text-2xl text-center not-found-grid">No results found</h1>
+                            @endif
+                            @foreach($blogs as $blog)
+                                <a href="{{route('single.blog', $blog->slug)}}">
+                                    <div class="flex flex-col gap-3">
+                                            <img src="{{ $blog->image }}" alt="" class="rounded-xl h-[12rem] lg:h-[20rem] border w-full object-cover">
+
+                                        <h1 class="font-bold text-2xl">{{$blog->title}}</h1>
+                                        <p class="text-[#676972] text-sm">{!! \Illuminate\Support\Str::limit($blog->content, 100, '...') !!}</p>
+                                        <div class="flex items-center gap-3">
+                                            <button class="bg-[#007AFE] px-4 text-white py-2 text-sm rounded-lg">View</button>
+                                            <div class="flex items-center gap-2">
+                                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4375 8C15.4375 11.8318 12.3318 14.9375 8.5 14.9375C4.66825 14.9375 1.5625 11.8318 1.5625 8C1.5625 4.16825 4.66825 1.0625 8.5 1.0625C12.3318 1.0625 15.4375 4.16825 15.4375 8Z" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M11.0736 10.2068L8.24609 8.52002V4.88477" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                <p class="text-sm">{{$blog->created_at->diffforhumans()}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="overflow-x-hidden">
-        <div data-aos="fade-left" data-aos-duration="500" class="container p-[2rem] mt-[2rem]">
-            <div class="text-center flex flex-col gap-4">
-                <h1 class="font-bold text-[#031D26] text-[2rem]">About  <span class="text-[#B11515]">Us</span></h1>
-            </div>
-        </div>
-        <div class="grid gap-5 xl:gap-0 xl:grid-cols-2 sm:w-[90%] mx-auto my-[2rem] p-[2rem]">
-            <div class="xl:w-50vw"><img class="h-[500px] xl:h-[600px] 3xl:h-[700px] w-full object-fit rounded-md" src="{{ asset('istockphoto-1130389312-612x612c0d3.jpg')}}" alt="hospital" /></div>
-            <div class="flex items-center justify-center xl:justify-start">
-                <div class="flex flex-col gap-3 h-fit bg-white shadow-lg border xl:-translate-x-10 rounded-md p-10 3xl:p-16">
-                    <p><span class="text-[#B11515] text-2xl">"</span> Welcome to the Mukhtaran Rafiq Welfare Hospital! We are an incredible initiative of the Mukhtaran Rafiq Foundation, committed to offering free medical treatment to underprivileged individuals in Lahore, Pakistan. Our journey began in May 2004, with a small dispensary aimed at addressing the lack of accessible healthcare in our local community. However, in response to the growing number of patients seeking our help, we recognized the need to expand our services. <span class="text-[#B11515] text-2xl">"</span></p>
-                    <a href="/"><button class="bg-[#B11515] text-white py-2 px-8 rounded-md w-fit">Read More</button></a>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section class="overflow-x-hidden">
-        <div data-aos="fade-left" data-aos-duration="500"
-             class="bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://mrf.org.pk/wp-content/themes/mukhtaran-rafiq-foundation/assets/images/hands-bg.png')] bg-cover bg-center min-h-[14rem] flex">
-            <div
-                class="container p-[2rem] mt-[2rem] flex items-center h-full justify-around gap-[2rem] text-white flex-wrap">
-                <div class="flex flex-col gap-2 items-center text-center">
-                    <h1 class="font-semibold">OPD Patients</h1>
-                    <h1 class="font-bold text-[3rem]">140000+</h1>
-                </div>
-                <div class="flex flex-col gap-2 items-center text-center">
-                    <h1 class="font-semibold">Admissions</h1>
-                    <h1 class="font-bold text-[3rem]">2300+</h1>
-                </div>
-                <div class="flex flex-col gap-2 items-center text-center">
-                    <h1 class="font-semibold">Dialysis</h1>
-                    <h1 class="font-bold text-[3rem]">2610+</h1>
-                </div>
-                <div class="flex flex-col gap-2 items-center text-center">
-                    <h1 class="font-semibold">Free Medical Camps</h1>
-                    <h1 class="font-bold text-[3rem]">15+</h1>
-                </div>
-                <div class="flex flex-col gap-2 items-center text-center">
-                    <h1 class="font-semibold">Free Tests</h1>
-                    <h1 class="font-bold text-[3rem]">5000+</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Code For Paginating blogs as (12 per page) -->
 
 
-    <section class="overflow-x-hidden">
-        <div data-aos="fade-left" data-aos-duration="500" class="container p-[2rem] mt-[2rem]">
-            <div class="text-center flex flex-col gap-4">
-                <h1 class="font-bold text-[#031D26] text-[2rem]">CSR</h1>
+    @if ($blogs->lastPage() > 1)
+        <ul class="pagination pb-[3rem]">
+            @if ($blogs->onFirstPage())
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;</span>
+                </li>
+            @else
+                <li class="page-item">
+                    <a href="{{ $blogs->previousPageUrl() }}" class="page-link">&laquo;</a>
+                </li>
+            @endif
 
-            </div>
-        </div>
-        <img src="{{ asset('assets/images/about-us.png')}}" class="mx-auto h-[20rem] w-full object-contain">
+            @for ($i = 1; $i <= $blogs->lastPage(); $i++)
+                @if ($i == $blogs->currentPage())
+                    <li class="page-item active">
+                        <span class="page-link">{{ $i }}</span>
+                    </li>
+                @else
+                    <li class="page-item">
+                        <a href="{{ $blogs->url($i) }}" class="page-link">{{ $i }}</a>
+                    </li>
+                @endif
+            @endfor
 
-    </section>
-
+            @if ($blogs->hasMorePages())
+                <li class="page-item">
+                    <a href="{{ $blogs->nextPageUrl() }}" class="page-link">&raquo;</a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;</span>
+                </li>
+            @endif
+        </ul>
+    @endif
 
 
 
 
-@include('layouts.partner')
+
+
 
 @endsection
 

@@ -1,5 +1,6 @@
 if(typeof Swiper !== 'undefined'){
 
+
 var banner = new Swiper(".banner", {
     spaceBetween: 30,
     // effect: "fade",
@@ -7,7 +8,17 @@ var banner = new Swiper(".banner", {
     loop: true,
     autoplay: true,
 });
-
+    var gallery_slider = new Swiper(".gallery_slider", {
+        spaceBetween: 30,
+        // effect: "fade",
+        speed: 1000,
+        loop: true,
+        autoplay: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
 var people = new Swiper(".people", {
     spaceBetween: 20,
     navigation: {

@@ -14,106 +14,127 @@
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>24x7 <span class="text-xs">OPD/Emergency Services</span></p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img2.png')}}" class="object-cover w-full" /></div>
-
+                      </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Obstetrics And Gynecology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img3.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Surgeries</p>
 
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img4.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Diabetes</p>
                 </div>
 
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img5.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Hemodialysis</p>
                 </div>
 
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img6.png')}}" class="object-cover w-full" /></div>
-
+                   </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Medicine</p>
                 </div>
 
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img7.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Nephrology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img8.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Urology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img9.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Cardiology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img10.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Orthopedicy</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img11.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Physiotherapy</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img12.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Dermatology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img13.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Peads</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img14.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Gastroenterology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img15.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Neurology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img16.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>E.N.T</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img17.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Dentistry</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img18.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Radiology</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img19.png')}}" class="object-cover w-full" /></div>
-
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Diagnostic Laboratory</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img20.png')}}" class="object-cover w-full" /></div>
-
+</a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>ECG</p>
                 </div>
                 <div class="swiper-slide text-center relative">
+                    <a href="{{ route('clinical-services') }}">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img21.png')}}" class="object-cover w-full" /></div>
+                    </a>
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Echocardiography</p>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebController;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,10 +39,13 @@ Route::get('/hospital-equipments', function () {
 
 Route::get('/clinical-services', function () {
     return view('clinical-services');
-});
-Route::get('/blog', function () {
-    return view('blog');
-});
+})->name('clinical-services');
+
+Route::get('/web-gallery', function () {
+    return view('gallery');
+})->name('web-gallery');
+
+
 
 Route::get('/contact-us', function () {
     return view('contact');
@@ -50,7 +54,14 @@ Route::get('/contact-us', function () {
 
 
 Route::get('doctor-schedule',[HomeController::class, 'doctorSchedule'])->name('doctor-schedule');
+Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
 
+Route::get('/blog/{slug}', function ($slug) {
+    // Retrieve a specific blog post using the slug
+    $blog = Blog::where('slug', $slug)->first();
+    $latestPosts = Blog::where('id', '!=', $blog->id)->where('status', 1)->latest()->take(5)->get();
+    return view('single-blog', ['blog' => $blog, 'latestPosts' => $latestPosts]);
+})->name('single.blog');
 
 Auth::routes();
 
@@ -82,7 +93,23 @@ Route::get('add-blog', [HomeController::class, 'addBlog'])->name('add.blog');
 Route::post('add-blog', [HomeController::class, 'insertBlog'])->name('insert.blog');
 Route::get('edit-blog/{id}', [HomeController::class, 'editBlog'])->name('edit.blog');
 Route::post('update-blog/{id}', [HomeController::class, 'updateBlog'])->name('update.blog');
-Route::delete('/delete/blog/{id}', [HomeController::class, 'deleteBlog'])->name('delete.banner');
+Route::delete('/delete/blog/{id}', [HomeController::class, 'deleteBlog'])->name('delete.blog');
+
+Route::get('gallery', [HomeController::class, 'galleryIndex'])->name('gallery.index');
+Route::get('add-gallery', [HomeController::class, 'addGallery'])->name('add.gallery');
+Route::post('add-gallery', [HomeController::class, 'insertGallery'])->name('insert.gallery');
+Route::get('edit-gallery/{id}', [HomeController::class, 'editGallery'])->name('edit.gallery');
+Route::post('update-gallery/{id}', [HomeController::class, 'updateGallery'])->name('update.gallery');
+Route::delete('/delete/gallery/{id}', [HomeController::class, 'deleteGallery'])->name('delete.gallery');
+
+
+Route::get('galleryitem', [HomeController::class, 'galleryitemIndex'])->name('galleryitem.index');
+Route::get('add-galleryitem', [HomeController::class, 'addGalleryItem'])->name('add.galleryitem');
+Route::post('add-galleryitem', [HomeController::class, 'insertGalleryItem'])->name('insert.galleryitem');
+Route::get('edit-galleryitem/{id}', [HomeController::class, 'editGalleryItem'])->name('edit.galleryitem');
+Route::post('update-galleryitem/{id}', [HomeController::class, 'updateGalleryItem'])->name('update.galleryitem');
+Route::delete('/delete/galleryitem/{id}', [HomeController::class, 'deleteGalleryItem'])->name('delete.galleryitem');
+
 
 Route::post('form-submit',[WebController::class, 'contactForm'])->name('form.submit');
 

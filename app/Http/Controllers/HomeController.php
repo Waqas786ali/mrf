@@ -6,6 +6,8 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Doctor;
+use App\Models\Gallery;
+use App\Models\GalleryItem;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -21,16 +23,34 @@ class HomeController extends Controller
 
     public function index()
     {
-
-        return view('admin-home');
+        $doctors = Doctor::count();
+        $blogs = Blog::count();
+        $contacts = Contact::count();
+        return view('admin-home',compact('doctors', 'blogs', 'contacts'));
     }
 
     public function doctorSchedule()
     {
-        $doctors = Doctor::where('status', 1)->get();
+        $doctors = Doctor::where('status', 1)->latest()->paginate(12);
         return view('doctor-schedule', compact('doctors'));
     }
 
+    public function blogs(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        $blogsQuery = Blog::query();
+
+        if ($searchTerm) {
+            $blogsQuery->where('title', 'like', "%$searchTerm%")
+                ->orWhere('content', 'like', "%$searchTerm%");
+        }
+
+        $blogs = $blogsQuery->latest()->paginate(12);
+
+
+        return view('blog', compact('blogs','searchTerm'));
+    }
 
 
     public function doctorIndex(Request $request)
@@ -496,6 +516,8 @@ class HomeController extends Controller
 
         $blog->image = $image;
         $blog->name = $request->name;
+        $blog->content = $request->content;
+        $blog->slug = $request->name;
         $blog->status = $request->status;
         $blog->save();
 
@@ -541,6 +563,8 @@ class HomeController extends Controller
 
         $blog->image = $image;
         $blog->name = $request->name;
+        $blog->content = $request->content;
+        $blog->slug = $request->name;
         $blog->status = $request->status;
         $blog->save();
 
@@ -552,4 +576,226 @@ class HomeController extends Controller
         Blog::find($id)->delete();
         return back()->with('success', 'Blog deleted Successfully');
     }
+
+
+    public function galleryIndex(Request $request)
+    {
+        $data = Gallery::all();
+
+        if ($request->ajax()) {
+            return DataTables::of($data)
+                ->addColumn('status', function ($data) {
+                    $status = '<span class="badge badge-pill badge-soft-danger font-size-11">InActive</span>';
+                    if ($data->status == 1) {
+                        $status = '<span class="badge badge-pill badge-soft-success font-size-11">Active</span>';
+                    }
+                    return $status;
+                })
+                ->addColumn('actions', function ($data) {
+
+                    $actions = '<div class="btn-group-sm" role="group" aria-label="Basic example">
+                    <a href="' . route('edit.gallery', $data->id) . '" class="btn btn-outline-primary btn-sm">Edit</a>
+                    <button class="btn btn-outline-danger btn-sm delete-gallery" data-id="' . $data->id . '">Delete</button>
+
+                                            </div>';
+                    return $actions;
+                })
+                ->rawColumns(['status', 'actions'])
+                ->make(true);
+        }
+        return view('gallery.index');
+    }
+
+    public function addGallery(Request $request)
+    {
+        return view('gallery.edit');
+    }
+
+    public function insertGallery(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        if ($request->has('status') && $request->status == 'on') {
+            $request['status'] = 1;
+        } else {
+            $request['status'] = 0;
+        }
+
+        $gallery = new Gallery();
+        $uploadedFiles = [];
+        $image = '';
+
+        if ($request->hasFile('image')) {
+            $uploadedFiles['image'] = $request->file('image');
+            $uploadedFiles = GlobalHelper::uploadAndSaveFile($uploadedFiles, 'gallery_images');
+
+            $image = $uploadedFiles['image'] ?? null;
+        } elseif (!empty($id)) {
+            $image = $gallery->image;
+        }
+
+
+        $gallery->image = $image;
+        $gallery->name = $request->name;
+        $gallery->status = $request->status;
+        $gallery->save();
+
+        return redirect()->route('gallery.index')->with('success', 'Gallery Added Successfully');
+    }
+    public function editGallery($id)
+    {
+        $gallery = Gallery::find($id);
+        return view('gallery.edit', compact('gallery'));
+    }
+
+    public function updateGallery($id, Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'name' => ['required'],
+
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        if ($request->has('status') && $request->status == 'on') {
+            $request['status'] = 1;
+        } else {
+            $request['status'] = 0;
+        }
+
+        $gallery = Gallery::find($id);
+        $uploadedFiles = [];
+        $image = '';
+
+
+        if ($request->hasFile('image')) {
+            $uploadedFiles['image'] = $request->file('image');
+            $uploadedFiles = GlobalHelper::uploadAndSaveFile($uploadedFiles, 'gallery_images');
+
+            $image = $uploadedFiles['image'] ?? null;
+        } elseif (!empty($id)) {
+            $image = $gallery->image;
+        }
+
+        $gallery->image = $image;
+        $gallery->name = $request->name;
+        $gallery->status = $request->status;
+        $gallery->save();
+
+        return redirect()->route('gallery.index')->with('success', 'Gallery Updated Successfully');
+    }
+
+    public function deleteGallery($id)
+    {
+        Gallery::find($id)->delete();
+        return back()->with('success', 'Gallery deleted Successfully');
+    }
+
+
+
+    public function galleryitemIndex(Request $request)
+    {
+        $data = GalleryItem::all();
+
+        if ($request->ajax()) {
+            return DataTables::of($data)
+                ->addColumn('gallery', function ($data) {
+                    $gallery = $data->gallery->name ?? '';
+                    return $gallery;
+                })
+                ->addColumn('actions', function ($data) {
+
+                    $actions = '<div class="btn-group-sm" role="group" aria-label="Basic example">
+                    <a href="' . route('edit.galleryitem', $data->id) . '" class="btn btn-outline-primary btn-sm">Edit</a>
+                    <button class="btn btn-outline-danger btn-sm delete-galleryitem" data-id="' . $data->id . '">Delete</button>
+
+                                            </div>';
+                    return $actions;
+                })
+                ->rawColumns(['status', 'actions'])
+                ->make(true);
+        }
+        return view('galleryitem.index');
+    }
+
+    public function addGalleryItem(Request $request)
+    {
+        $galleries = Gallery::where('status', 1)->get();
+        return view('galleryitem.edit',compact('galleries'));
+    }
+
+    public function insertGalleryItem(Request $request)
+    {
+
+
+
+        $galleryitem = new GalleryItem();
+        $uploadedFiles = [];
+        $image = '';
+
+        if ($request->hasFile('url')) {
+            $uploadedFiles['url'] = $request->file('url');
+            $uploadedFiles = GlobalHelper::uploadAndSaveFile($uploadedFiles, 'galleryitem_images');
+
+            $image = $uploadedFiles['url'] ?? null;
+        } elseif (!empty($id)) {
+            $image = $galleryitem->url;
+        }
+
+
+        $galleryitem->url = $image;
+        $galleryitem->gallery_id = $request->gallery_id;
+        $galleryitem->save();
+
+        return redirect()->route('gallery.index')->with('success', 'Gallery Added Successfully');
+    }
+    public function editGalleryItem($id)
+    {
+        $galleryitem = GalleryItem::find($id);
+        $galleries = Gallery::where('status', 1)->get();
+
+        return view('galleryitem.edit', compact('galleryitem','galleries'));
+    }
+
+    public function updateGalleryItem($id, Request $request)
+    {
+        
+
+        $galleryitem = GalleryItem::find($id);
+        $uploadedFiles = [];
+        $image = '';
+
+
+        if ($request->hasFile('url')) {
+            $uploadedFiles['url'] = $request->file('url');
+            $uploadedFiles = GlobalHelper::uploadAndSaveFile($uploadedFiles, 'galleryitem_images');
+
+            $image = $uploadedFiles['url'] ?? null;
+        } elseif (!empty($id)) {
+            $image = $galleryitem->image;
+        }
+
+        $galleryitem->url = $image;
+        $galleryitem->gallery_id = $request->gallery_id;
+        $galleryitem->save();
+
+        return redirect()->route('galleryitem.index')->with('success', 'Gallery Item Updated Successfully');
+    }
+
+    public function deleteGalleryItem($id)
+    {
+        GalleryItem::find($id)->delete();
+        return back()->with('success', 'Gallery Item deleted Successfully');
+    }
 }
+
+

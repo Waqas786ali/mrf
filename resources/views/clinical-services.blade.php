@@ -36,11 +36,13 @@
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Hemodialysis</p>
                 </div>
 
-                <div class="swiper-slide text-center relative">
-                    <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img6.png')}}" class="object-cover w-full" /></div>
+
+                    <div class="swiper-slide text-center relative">
+                    <div  class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img6.png')}}" class="object-cover w-full" /></div>
 
                     <p class='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[10rem] font-semibold pt-2 text-[#fff]'>Medicine</p>
                 </div>
+                </a>
 
                 <div class="swiper-slide text-center relative">
                     <div class="object-cover mx-auto border-2 border-[#B11515] bg-[#B11515] w-[10rem] h-[10rem] rounded-full" ><img src="{{ asset('assets/images/Clinical_services/img7.png')}}" class="object-cover w-full" /></div>
