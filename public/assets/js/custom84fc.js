@@ -2,16 +2,16 @@ if(typeof Swiper !== 'undefined'){
 
 
 var banner = new Swiper(".banner", {
-    spaceBetween: 30,
     // effect: "fade",
+    spaceBetween: 30,
     speed: 1000,
     loop: true,
     autoplay: true,
 });
     var gallery_slider = new Swiper(".gallery_slider", {
-        spaceBetween: 30,
         // effect: "fade",
-        speed: 1000,
+        spaceBetween: 30,
+        speed: 500,
         loop: true,
         autoplay: true,
         pagination: {

@@ -240,23 +240,23 @@
                 class="container p-[2rem] mt-[2rem] flex items-center h-full justify-around gap-[2rem] text-white flex-wrap">
                 <div class="flex flex-col gap-2 items-center text-center">
                     <h1 class="font-semibold">OPD Patients</h1>
-                    <h1 class="font-bold text-[3rem]">140000+</h1>
+                    <h1 id="counter1" class="font-bold text-[3rem]"></h1>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-center">
                     <h1 class="font-semibold">Admissions</h1>
-                    <h1 class="font-bold text-[3rem]">2300+</h1>
+                    <h1  id="counter2" class="font-bold text-[3rem]"></h1>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-center">
                     <h1 class="font-semibold">Dialysis</h1>
-                    <h1 class="font-bold text-[3rem]">2610+</h1>
+                    <h1 id="counter3" class="font-bold text-[3rem]"></h1>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-center">
                     <h1 class="font-semibold">Free Medical Camps</h1>
-                    <h1 class="font-bold text-[3rem]">15+</h1>
+                    <h1 id="counter4" class="font-bold text-[3rem]">1</h1>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-center">
                     <h1 class="font-semibold">Free Tests</h1>
-                    <h1 class="font-bold text-[3rem]">5000+</h1>
+                    <h1 id="counter5" class="font-bold text-[3rem]"></h1>
                 </div>
             </div>
         </div>

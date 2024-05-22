@@ -21,19 +21,20 @@
                             <div class="flex items-center gap-3 md:ml-0 ml-[3rem]">
                                 <!-- <button class="bg-[#007AFE] px-4 text-white py-2 text-sm rounded-lg">Place an
                                     order</button> -->
-                                <div class="flex items-center gap-2">
+                           
+                            </div>
+                            <div class="flex flex-col gap-2 font-outfit mt-[2rem]">
+                            <img src="{{ asset($blog->image) }}" alt="" class="rounded-xl h-[12rem] lg:h-[20rem] border w-full object-cover">
+                            <div class="flex items-center gap-2">
                                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4375 8C15.4375 11.8318 12.3318 14.9375 8.5 14.9375C4.66825 14.9375 1.5625 11.8318 1.5625 8C1.5625 4.16825 4.66825 1.0625 8.5 1.0625C12.3318 1.0625 15.4375 4.16825 15.4375 8Z" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                         <path d="M11.0736 10.2068L8.24609 8.52002V4.88477" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                     </svg>
-                                    <p class="text-sm">{{ $blog->created_at->diffforhumans() }}</p>
+                                    <p class="text-sm">{{ $blog->created_at->format('j F Y') }}</p>
                                 </div>
-                            </div>
-                            <div class="flex flex-col gap-2 font-outfit mt-[2rem]">
-                                <h1 class="font-bold text-[2.2rem]">{{ $blog->title }}</h1>
+                                <h1 class="font-bold text-[2.2rem]">{{ $blog->name }}</h1>
                                 <div class="render_html">{!! $blog->content !!}</div>
 
-                                <img src="{{ asset($blog->image) }}" alt="" class="rounded-xl h-[12rem] lg:h-[20rem] border w-full object-cover">
 
                             </div>
                         </div>
@@ -59,11 +60,11 @@
                                     </a>
 
                                 <div class="flex flex-col gap-3 p-4">
-                                    <h1 class="font-bold text-2xl">{{ $lp->title }}</h1>
+                                    <h1 class="font-bold text-2xl">{{ $lp->name }}</h1>
                                     <div class="text-[#676972] text-sm">{!! \Illuminate\Support\Str::limit($lp->content, 100, '...') !!}</div>
                                     <div class="flex items-center gap-3 rounded-b-xl">
-                                        <a href="{{ route('single.blog', $lp->slug) }}" class="bg-white rounded-xl">
-                                            <button class="bg-[#007AFE] px-4 text-white py-2 text-sm rounded-lg">View</button>
+                                        <a href="{{ route('single.blog', $lp->slug) }}" class=" rounded-xl">
+                                            <button style="color:red;" class="px-4 text-white py-2 text-sm rounded-lg">Admin</button>
                                         </a>
                                         <div class="flex items-center gap-2">
                                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +72,7 @@
                                                 <path d="M11.0736 10.2068L8.24609 8.52002V4.88477" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                                 </path>
                                             </svg>
-                                            <p class="text-sm">{{ $lp->created_at->diffforhumans() }}</p>
+                                            <p class="text-sm">{{ $blog->created_at->format('j F Y') }}</p>
                                         </div>
                                     </div>
                                 </div>

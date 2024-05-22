@@ -74,7 +74,7 @@
                     <p>Mukhtaran Rafiq Foundation.</p>
                     <p>Mughalpura Branch, Lahore.</p>
                     <p>A/C # 5524-5000338312</p>
-                    <p>Swift Code  : ALFHPKKA524</p>
+                    <p>Swift Code  : ALFHPKKAXXX</p>
                     <p>
                         IBAN Number : PK72ALFH5524005000338312
                     </p>

@@ -44,18 +44,14 @@
 
                         </div>
                         <div>
-                            <div class="flex items-center gap-2 border rounded-full px-4 py-2 text-sm w-fit">
-                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="10.2698" cy="9.7659" r="8.98856" stroke="#A9B3C5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.5234 16.4844L20.0475 19.9992" stroke="#A9B3C5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                <form action="{{ route('blogs') }}" method="GET" class="flex gap-2">
-                                    <input type="text" placeholder="Search Blog" name="search" class="outline-none border-none w-full text-sm" value="{{ $searchTerm }}" onkeydown="if(event.keyCode === 13) this.form.submit()">
-                                </form>
-                            </div>
                         </div>
                     </div>
+                    <div class="mt-[2rem] text-center">
+    <h1 class="font-bold text-2xl">Latest Blogs</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+</div>
                     <div class="mt-[2rem]">
+                        
                         <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-6">
                             @if ($blogs->isEmpty())
                                 <h1 class="font-bold text-2xl text-center not-found-grid">No results found</h1>
@@ -65,16 +61,16 @@
                                     <div class="flex flex-col gap-3">
                                             <img src="{{ $blog->image }}" alt="" class="rounded-xl h-[12rem] lg:h-[20rem] border w-full object-cover">
 
-                                        <h1 class="font-bold text-2xl">{{$blog->title}}</h1>
+                                        <h1 class="font-bold text-2xl">{{$blog->name}}</h1>
                                         <p class="text-[#676972] text-sm">{!! \Illuminate\Support\Str::limit($blog->content, 100, '...') !!}</p>
                                         <div class="flex items-center gap-3">
-                                            <button class="bg-[#007AFE] px-4 text-white py-2 text-sm rounded-lg">View</button>
+                                            <button style="color:red;" class=" px-4 text-white py-2 text-sm rounded-lg">Admin</button>
                                             <div class="flex items-center gap-2">
                                                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4375 8C15.4375 11.8318 12.3318 14.9375 8.5 14.9375C4.66825 14.9375 1.5625 11.8318 1.5625 8C1.5625 4.16825 4.66825 1.0625 8.5 1.0625C12.3318 1.0625 15.4375 4.16825 15.4375 8Z" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                     <path d="M11.0736 10.2068L8.24609 8.52002V4.88477" stroke="#007AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                 </svg>
-                                                <p class="text-sm">{{$blog->created_at->diffforhumans()}}</p>
+                                                <p class="text-sm">{{ $blog->created_at->format('j F Y') }}</p>
                                             </div>
                                         </div>
                                     </div>

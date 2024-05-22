@@ -29,28 +29,6 @@ class HomeController extends Controller
         return view('admin-home',compact('doctors', 'blogs', 'contacts'));
     }
 
-    public function doctorSchedule()
-    {
-        $doctors = Doctor::where('status', 1)->latest()->paginate(12);
-        return view('doctor-schedule', compact('doctors'));
-    }
-
-    public function blogs(Request $request)
-    {
-        $searchTerm = $request->input('search');
-
-        $blogsQuery = Blog::query();
-
-        if ($searchTerm) {
-            $blogsQuery->where('title', 'like', "%$searchTerm%")
-                ->orWhere('content', 'like', "%$searchTerm%");
-        }
-
-        $blogs = $blogsQuery->latest()->paginate(12);
-
-
-        return view('blog', compact('blogs','searchTerm'));
-    }
 
 
     public function doctorIndex(Request $request)
@@ -736,8 +714,6 @@ class HomeController extends Controller
     public function insertGalleryItem(Request $request)
     {
 
-
-
         $galleryitem = new GalleryItem();
         $uploadedFiles = [];
         $image = '';
@@ -756,7 +732,7 @@ class HomeController extends Controller
         $galleryitem->gallery_id = $request->gallery_id;
         $galleryitem->save();
 
-        return redirect()->route('gallery.index')->with('success', 'Gallery Added Successfully');
+        return redirect()->route('galleryitem.index')->with('success', 'Gallery Added Successfully');
     }
     public function editGalleryItem($id)
     {
@@ -768,12 +744,10 @@ class HomeController extends Controller
 
     public function updateGalleryItem($id, Request $request)
     {
-        
 
         $galleryitem = GalleryItem::find($id);
         $uploadedFiles = [];
         $image = '';
-
 
         if ($request->hasFile('url')) {
             $uploadedFiles['url'] = $request->file('url');
