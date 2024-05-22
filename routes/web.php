@@ -41,9 +41,13 @@ Route::get('/clinical-services', function () {
     return view('clinical-services');
 })->name('clinical-services');
 
-Route::get('/web-gallery', function () {
-    return view('gallery');
-})->name('web-gallery');
+Route::get('/donate', function () {
+    return view('donate');
+})->name('donate');
+
+
+Route::get('web-gallery',[WebController::class, 'gallery'])->name('web-gallery');
+
 
 
 
@@ -51,10 +55,14 @@ Route::get('/contact-us', function () {
     return view('contact');
 });
 
+Route::get('/events', function () {
+    return view('event');
+});
 
 
-Route::get('doctor-schedule',[HomeController::class, 'doctorSchedule'])->name('doctor-schedule');
-Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
+
+Route::get('doctor-schedule',[WebController::class, 'doctorSchedule'])->name('doctor-schedule');
+Route::get('blogs',[WebController::class, 'blogs'])->name('blogs');
 
 Route::get('/blog/{slug}', function ($slug) {
     // Retrieve a specific blog post using the slug

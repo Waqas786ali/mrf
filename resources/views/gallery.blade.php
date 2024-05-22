@@ -3,6 +3,8 @@
 @section('content')
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.0/viewer.min.css">
+    <!-- Include Viewer.js script -->
 
     <style>
         .sliderbox:hover{
@@ -74,45 +76,44 @@
 
     <main class="flex p-4 w-full flex-col gap-4 max-w-screen-xl m-auto">
         <div class="flex items-center justify-center w-full">
-            <h1 class="text-4xl font-bold text-center text-[#007643]">AJK Public Welfare Activities</h1>
+            <h1 class="text-4xl font-bold text-center text-[#007643]">MUKHTARAN RAFIQ FOUNDATION  Welfare Activities</h1>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:p-4">
-            <div style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;"
-                 class="sliderbox shadow-md bg-white p-4 duration-500 transition-all rounded-md flex flex-col cursor-pointer">
-                <div class="flex items-center justify-center">
-                    <h3 class="font-bold text-[#007643] text-2xl">Kashmir Premier League 2022</h3>
-                </div>
-                <div class="w-[80%] m-auto flex flex-col gap-3 p-4 swiper">
-                    <div class="images swiper-wrapper gallery_slider">
-                        <div class="swiper-slide">
-                            <img class="rounded-lg" src="{{ asset('assets/newimages/image4.d2b53f33c1a8f0d32e50.jpg')}}" alt="img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="rounded-lg" src="{{ asset('assets/newimages/image5.4d568e476e3c805f99e2.jpg')}}" alt="img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="rounded-lg" src="{{ asset('assets/newimages/image6.6fa198d1d24d305c5109.jpg')}}" alt="img" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="rounded-lg" src="{{ asset('assets/newimages/image8.67052bfde07d04e90036.jpg')}}" alt="img" />
-                        </div>
+        @foreach ($galleries as $index => $gallery)
+    <div style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;" class="sliderbox shadow-md bg-white p-4 duration-500 transition-all rounded-md flex flex-col cursor-pointer">
+        <div class="flex items-center justify-center">
+            <h3 class="font-bold text-[#007643] text-2xl">{{ $gallery->name }}</h3>
+        </div>
+        <div class="w-[80%] min-h-[380px] m-auto flex flex-col gap-3 p-4 swiper gallery_slider">
+            <div class="images swiper-wrapper viewer viewer{{ $index }}">
+                @foreach ($gallery->galleryitem as $item)
+                    <div class="swiper-slide">
+                            <img class="rounded-lg min-h-[300px]" src="{{ asset($item->url) }}" alt="img" />
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <!-- <div class="flex gap-2 items-center justify-center mt-4">
-                        <div class="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 bg-[#007643] rounded-full"></div>
-                        <div class="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
-                    </div> -->
-                </div>
+                @endforeach
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div id="image-viewer">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="full-image">
+    </div>
+       @endforeach
+
+
         </div>
+
     </main>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.0/viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        @foreach ($galleries as $index => $gallery)
+            new Viewer(document.querySelector('.viewer{{ $index }}'));
+        @endforeach
+    });
+</script>
 
 
 

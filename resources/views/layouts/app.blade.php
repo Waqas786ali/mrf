@@ -135,8 +135,8 @@ MUKHTARAN RAFIQ FOUNDATION is recognized by Social Welfare Department, Governmen
                                     <li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="/doctor-schedule">Find a Doctor</a><p id="dddd" class="open-btn" >﹀</p></li>
                                 </ul>
                             </li>
-                            <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="#">Gallery</a><p id="dddd" class="open-btn" >﹀</p></li>
-                            <li id="menu-item-732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-732"><a href="#">Blogs</a><p id="dddd" class="open-btn" >﹀</p></li>
+                            <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="/web-gallery">Gallery</a><p id="dddd" class="open-btn" >﹀</p></li>
+                            <li id="menu-item-732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-732"><a href="/blogs">Blogs</a><p id="dddd" class="open-btn" >﹀</p></li>
                             <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="/contact-us">Contact Us</a><p id="dddd" class="open-btn" >﹀</p></li>
                         </ul><script>
 
@@ -225,7 +225,7 @@ MUKHTARAN RAFIQ FOUNDATION is recognized by Social Welfare Department, Governmen
 
 
                         <li>
-                            <a href="/"
+                            <a href="/donate"
                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#B11515] md:p-0">
                                 <button type="button"
                                         class="text-white bg-[#B11515] hover:bg-white hover:text-[#B11515] border border-[#B11515] transition-all font-medium rounded-sm text-sm px-5 py-2.5 focus:outline-none">Donate
@@ -254,100 +254,26 @@ MUKHTARAN RAFIQ FOUNDATION is recognized by Social Welfare Department, Governmen
     <section>
         <div class="swiper banner  lg:h-[32rem] md:h-[16rem] h-[12rem]">
             <div class="swiper-wrapper">
+            @foreach ($bannerImages as $banner)
+
                 <div class="swiper-slide">
                     <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner-1.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
+                        <img src="{{ asset($banner->image) }}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
                         <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">Help
+                            <!-- <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">Help
                                 lots of people by
-                                donating a little bit from your money.</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner-2.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">Let's
-                                help those who are
-                                more in need.</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{ asset('assets/images/banner-3.jpg')}}" class="object-contain w-full" />
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/For%20Web-1.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">
-                                MRF Helps Create Infinite Joy by Bringing People Together.</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/For%20Web-2.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">
-                                Join MRF to Experience the Joy of Righteousness.</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/For%20Web-3.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">
-                                Lets donate and save lives, Your health is our priority.</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/For%20Web-4.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <div class="container z-[1]">
-                            <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">
-                                Donate medical supplies to MRF hospital to facilitate people in medical cases.</h1>
+                                donating a little bit from your money.</h1> -->
                         </div>
                     </div>
                 </div>
 
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/banner-7.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <!--<div class="container z-[1]">-->
-                        <!--    <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">-->
-                        <!--        Donate medical supplies to MRF hospital to facilitate people in medical cases.</h1>-->
-                        <!--</div>-->
-                    </div>
-                </div>
+                @endforeach
 
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/banner-6.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <!--<div class="container z-[1]">-->
-                        <!--    <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">-->
-                        <!--        Donate medical supplies to MRF hospital to facilitate people in medical cases.</h1>-->
-                        <!--</div>-->
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="relative flex items-center h-full">
-                        <img src="{{ asset('assets/images/banner/gynae-slide.jpg')}}" class="object-cover object-center absolute z-[-1] inset-0 w-full h-full" />
-                        <!--<div class="container z-[1]">-->
-                        <!--    <h1 class="md:text-[3rem] text-[1.5rem] font-bold text-white w-[50%] leading-[1.4]">-->
-                        <!--        Donate medical supplies to MRF hospital to facilitate people in medical cases.</h1>-->
-                        <!--</div>-->
-                    </div>
-                </div>
+\
 
 
             </div>
-            <div class="swiper-pagination"></div>
+{{--            <div class="swiper-pagination"></div>--}}
 
         </div>
     </section>
@@ -403,7 +329,7 @@ MUKHTARAN RAFIQ FOUNDATION is recognized by Social Welfare Department, Governmen
                 <a href="/clinical-services" class="text-sm text-[#413D3A]">Clinical Services</a>
             </div>
             <div class="flex flex-col gap-4">
-                <h1 class="font-semibold text-xl mb-3">dsfkdsfhkds Us</h1>
+                <h1 class="font-semibold text-xl mb-3">About Us</h1>
                 <a href="/about" class="text-sm text-[#413D3A]">About</a>
                 <a href="/about#Started" class="text-sm text-[#413D3A]">How We Started</a>
                 <a href="/about#Value" class="text-sm text-[#413D3A]">Our Value</a>
@@ -526,5 +452,34 @@ MUKHTARAN RAFIQ FOUNDATION is recognized by Social Welfare Department, Governmen
         $('#image-viewer').hide();
     });
 </script>
+
+<script>
+    const counts = [
+        { total: 140000, durationInSeconds: 0.2, updatesPerSecond: 1000 },
+        { total: 2300, durationInSeconds: 0.2, updatesPerSecond: 500 },
+        { total: 2610, durationInSeconds: 0.2, updatesPerSecond: 100 },
+        { total: 15, durationInSeconds: 0.2, updatesPerSecond: 750 },
+        { total: 5000, durationInSeconds: 0.2, updatesPerSecond: 600 }
+    ];
+
+    const intervals = [];
+
+    counts.forEach((count, index) => {
+        const updateInterval = count.durationInSeconds * count.updatesPerSecond / count.total;
+        let currentValue = 0;
+
+        intervals[index] = setInterval(() => {
+            let counter = document.getElementById(`counter${index + 1}`);
+            currentValue += count.total / (count.durationInSeconds * count.updatesPerSecond);
+            counter.innerHTML = Math.round(currentValue) + "+";
+            if (currentValue >= count.total) {
+                clearInterval(intervals[index]);
+            }
+        }, updateInterval);
+    });
+</script>
+
+
+
 </body>
 </html>
