@@ -8,17 +8,7 @@ var banner = new Swiper(".banner", {
     loop: true,
     autoplay: true,
 });
-    var gallery_slider = new Swiper(".gallery_slider", {
-        // effect: "fade",
-        spaceBetween: 30,
-        speed: 500,
-        loop: true,
-        autoplay: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
+  
 var people = new Swiper(".people", {
     spaceBetween: 20,
     navigation: {

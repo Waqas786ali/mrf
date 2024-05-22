@@ -5,6 +5,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.0/viewer.min.css">
     <!-- Include Viewer.js script -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
     <style>
         .sliderbox:hover{
@@ -103,16 +107,33 @@
     </main>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.0/viewer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var gallery_slider = new Swiper(".gallery_slider", {
+                // effect: "fade",
+                spaceBetween: 30,
+                speed: 500,
+                loop: true,
+                autoplay: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        });
+
     document.addEventListener('DOMContentLoaded', function () {
         @foreach ($galleries as $index => $gallery)
             new Viewer(document.querySelector('.viewer{{ $index }}'));
         @endforeach
     });
+
+   
+
 </script>
 
 
